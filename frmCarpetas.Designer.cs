@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCarpetas));
             this.listaCarpetas = new System.Windows.Forms.FolderBrowserDialog();
-            this.trvCarpetas = new System.Windows.Forms.TreeView();
             this.lstFiles = new System.Windows.Forms.ListView();
             this.btnCarpetas = new System.Windows.Forms.Button();
             this.lblEjemplo = new System.Windows.Forms.Label();
@@ -40,19 +40,12 @@
             this.lblNom = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // trvCarpetas
-            // 
-            this.trvCarpetas.Location = new System.Drawing.Point(386, 122);
-            this.trvCarpetas.Name = "trvCarpetas";
-            this.trvCarpetas.Size = new System.Drawing.Size(121, 190);
-            this.trvCarpetas.TabIndex = 0;
-            // 
             // lstFiles
             // 
             this.lstFiles.HideSelection = false;
             this.lstFiles.Location = new System.Drawing.Point(174, 23);
             this.lstFiles.Name = "lstFiles";
-            this.lstFiles.Size = new System.Drawing.Size(121, 190);
+            this.lstFiles.Size = new System.Drawing.Size(181, 190);
             this.lstFiles.TabIndex = 1;
             this.lstFiles.UseCompatibleStateImageBehavior = false;
             this.lstFiles.SelectedIndexChanged += new System.EventHandler(this.lstFiles_SelectedIndexChanged);
@@ -69,18 +62,18 @@
             // 
             // lblEjemplo
             // 
-            this.lblEjemplo.AutoSize = true;
             this.lblEjemplo.Location = new System.Drawing.Point(13, 70);
             this.lblEjemplo.Name = "lblEjemplo";
-            this.lblEjemplo.Size = new System.Drawing.Size(49, 13);
+            this.lblEjemplo.Size = new System.Drawing.Size(135, 129);
             this.lblEjemplo.TabIndex = 3;
             this.lblEjemplo.Text = "Dirreciòn";
             // 
             // txtShow
             // 
-            this.txtShow.Location = new System.Drawing.Point(322, 26);
+            this.txtShow.Location = new System.Drawing.Point(386, 26);
+            this.txtShow.Multiline = true;
             this.txtShow.Name = "txtShow";
-            this.txtShow.Size = new System.Drawing.Size(100, 20);
+            this.txtShow.Size = new System.Drawing.Size(139, 187);
             this.txtShow.TabIndex = 4;
             // 
             // btnGrabar
@@ -130,7 +123,7 @@
             this.Controls.Add(this.lblEjemplo);
             this.Controls.Add(this.btnCarpetas);
             this.Controls.Add(this.lstFiles);
-            this.Controls.Add(this.trvCarpetas);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCarpetas";
             this.Text = "frmCarpetas";
             this.ResumeLayout(false);
@@ -141,7 +134,6 @@
         #endregion
 
         private System.Windows.Forms.FolderBrowserDialog listaCarpetas;
-        private System.Windows.Forms.TreeView trvCarpetas;
         private System.Windows.Forms.ListView lstFiles;
         private System.Windows.Forms.Button btnCarpetas;
         private System.Windows.Forms.Label lblEjemplo;

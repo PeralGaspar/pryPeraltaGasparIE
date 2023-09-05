@@ -25,6 +25,11 @@ namespace pryPeraltaGasparIE
             listaCarpetas.ShowDialog();
             ruta = listaCarpetas.SelectedPath;
             lblEjemplo.Text = ruta;
+            string[] files = Directory.GetFiles(ruta);
+            foreach (string file in files)
+            {
+                lstFiles.Items.Add(Path.GetFileName(file));
+            }
         }
 
         private void lstFiles_SelectedIndexChanged(object sender, EventArgs e)
@@ -34,7 +39,11 @@ namespace pryPeraltaGasparIE
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-            StreamWriter manejoArchivo = new StreamWriter("Archivito");
+            string nom = ruta + "/" + txtArchivo.Text;
+            StreamWriter manejoArchivo = new StreamWriter(nom);
+            manejoArchivo.Write(txtWrite.Text);
+            manejoArchivo.Close();
+            MessageBox.Show("Se genero el archivo");
         }
     }
 }
