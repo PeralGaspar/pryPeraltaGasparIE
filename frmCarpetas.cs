@@ -19,31 +19,86 @@ namespace pryPeraltaGasparIE
         }
         public string ruta = "";
 
+        private void PopulateTreeView()
+        {
+            TreeNode rootNode;
+
+            DirectoryInfo info = new DirectoryInfo(@"../..");
+            if (info.Exists)
+            {
+                rootNode = new TreeNode(info.Name);
+                rootNode.Tag = info;
+                GetDirectories(info.GetDirectories(), rootNode);
+                treeView1.Nodes.Add(rootNode);
+            }
+        }
+
+        private void GetDirectories(DirectoryInfo[] subDirs,
+            TreeNode nodeToAddTo)
+        {
+            TreeNode aNode;
+            DirectoryInfo[] subSubDirs;
+            foreach (DirectoryInfo subDir in subDirs)
+            {
+                aNode = new TreeNode(subDir.Name, 0, 0);
+                aNode.Tag = subDir;
+                aNode.ImageKey = "carpeta";
+                subSubDirs = subDir.GetDirectories();
+                if (subSubDirs.Length != 0)
+                {
+                    GetDirectories(subSubDirs, aNode);
+                }
+                nodeToAddTo.Nodes.Add(aNode);
+            }
+        }
+
+
         private void btnCarpetas_Click(object sender, EventArgs e)
         {
-            
-            listaCarpetas.ShowDialog();
-            ruta = listaCarpetas.SelectedPath;
-            lblEjemplo.Text = ruta;
-            string[] files = Directory.GetFiles(ruta);
-            foreach (string file in files)
-            {
-                lstFiles.Items.Add(Path.GetFileName(file));
-            }
+
+            PopulateTreeView();
         }
 
         private void lstFiles_SelectedIndexChanged(object sender, EventArgs e)
         {
             
         }
-
-        private void btnGrabar_Click(object sender, EventArgs e)
+        private void treeView1_AfterSelect(object sender, EventArgs e)
         {
-            string nom = ruta + "/" + txtArchivo.Text;
-            StreamWriter manejoArchivo = new StreamWriter(nom);
-            manejoArchivo.Write(txtWrite.Text);
-            manejoArchivo.Close();
-            MessageBox.Show("Se genero el archivo");
+            
+        }
+        void treeView1_NodeMouseClick(object sender,
+    TreeNodeMouseClickEventArgs e)
+        {
+            TreeNode newSelected = e.Node;
+            listView1.Items.Clear();
+            DirectoryInfo nodeDirInfo = (DirectoryInfo)newSelected.Tag;
+            ListViewItem.ListViewSubItem[] subItems;
+            ListViewItem item = null;
+
+            foreach (DirectoryInfo dir in nodeDirInfo.GetDirectories())
+            {
+                item = new ListViewItem(dir.Name, 0);
+                subItems = new ListViewItem.ListViewSubItem[]
+                    {new ListViewItem.ListViewSubItem(item, "Directory"),
+             new ListViewItem.ListViewSubItem(item,
+                dir.LastAccessTime.ToShortDateString())};
+                item.SubItems.AddRange(subItems);
+                listView1.Items.Add(item);
+            }
+            foreach (FileInfo file in nodeDirInfo.GetFiles())
+            {
+                item = new ListViewItem(file.Name, 1);
+                subItems = new ListViewItem.ListViewSubItem[]
+                    { new ListViewItem.ListViewSubItem(item, "Archivo"),
+             new ListViewItem.ListViewSubItem(item,
+                file.LastAccessTime.ToShortDateString())};
+
+                item.SubItems.AddRange(subItems);
+                listView1.Items.Add(item);
+            }
+
+            listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
     }
 }

@@ -28,119 +28,126 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCarpetas));
             this.listaCarpetas = new System.Windows.Forms.FolderBrowserDialog();
-            this.lstFiles = new System.Windows.Forms.ListView();
             this.btnCarpetas = new System.Windows.Forms.Button();
-            this.lblEjemplo = new System.Windows.Forms.Label();
-            this.txtShow = new System.Windows.Forms.TextBox();
-            this.btnGrabar = new System.Windows.Forms.Button();
-            this.txtWrite = new System.Windows.Forms.TextBox();
-            this.txtArchivo = new System.Windows.Forms.TextBox();
-            this.lblNom = new System.Windows.Forms.Label();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.Nombre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Tipo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Detalles = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lstFiles
-            // 
-            this.lstFiles.HideSelection = false;
-            this.lstFiles.Location = new System.Drawing.Point(174, 23);
-            this.lstFiles.Name = "lstFiles";
-            this.lstFiles.Size = new System.Drawing.Size(181, 190);
-            this.lstFiles.TabIndex = 1;
-            this.lstFiles.UseCompatibleStateImageBehavior = false;
-            this.lstFiles.SelectedIndexChanged += new System.EventHandler(this.lstFiles_SelectedIndexChanged);
             // 
             // btnCarpetas
             // 
             this.btnCarpetas.Location = new System.Drawing.Point(13, 23);
             this.btnCarpetas.Name = "btnCarpetas";
-            this.btnCarpetas.Size = new System.Drawing.Size(126, 23);
+            this.btnCarpetas.Size = new System.Drawing.Size(85, 23);
             this.btnCarpetas.TabIndex = 2;
-            this.btnCarpetas.Text = "Seleccionar Carpeta";
+            this.btnCarpetas.Text = "Proveedores";
             this.btnCarpetas.UseVisualStyleBackColor = true;
             this.btnCarpetas.Click += new System.EventHandler(this.btnCarpetas_Click);
             // 
-            // lblEjemplo
+            // splitContainer1
             // 
-            this.lblEjemplo.Location = new System.Drawing.Point(13, 70);
-            this.lblEjemplo.Name = "lblEjemplo";
-            this.lblEjemplo.Size = new System.Drawing.Size(135, 129);
-            this.lblEjemplo.TabIndex = 3;
-            this.lblEjemplo.Text = "Dirreciòn";
+            this.splitContainer1.Location = new System.Drawing.Point(104, 23);
+            this.splitContainer1.Name = "splitContainer1";
             // 
-            // txtShow
+            // splitContainer1.Panel1
             // 
-            this.txtShow.Location = new System.Drawing.Point(386, 26);
-            this.txtShow.Multiline = true;
-            this.txtShow.Name = "txtShow";
-            this.txtShow.Size = new System.Drawing.Size(139, 187);
-            this.txtShow.TabIndex = 4;
+            this.splitContainer1.Panel1.Controls.Add(this.treeView1);
             // 
-            // btnGrabar
+            // splitContainer1.Panel2
             // 
-            this.btnGrabar.Location = new System.Drawing.Point(16, 400);
-            this.btnGrabar.Name = "btnGrabar";
-            this.btnGrabar.Size = new System.Drawing.Size(75, 23);
-            this.btnGrabar.TabIndex = 5;
-            this.btnGrabar.Text = "GRABAR";
-            this.btnGrabar.UseVisualStyleBackColor = true;
-            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
+            this.splitContainer1.Panel2.Controls.Add(this.listView1);
+            this.splitContainer1.Size = new System.Drawing.Size(421, 415);
+            this.splitContainer1.SplitterDistance = 144;
+            this.splitContainer1.TabIndex = 5;
             // 
-            // txtWrite
+            // treeView1
             // 
-            this.txtWrite.Location = new System.Drawing.Point(14, 283);
-            this.txtWrite.Multiline = true;
-            this.txtWrite.Name = "txtWrite";
-            this.txtWrite.Size = new System.Drawing.Size(203, 111);
-            this.txtWrite.TabIndex = 6;
+            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView1.ImageIndex = 0;
+            this.treeView1.ImageList = this.imageList1;
+            this.treeView1.Location = new System.Drawing.Point(0, 0);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.SelectedImageIndex = 0;
+            this.treeView1.Size = new System.Drawing.Size(144, 415);
+            this.treeView1.TabIndex = 0;
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
-            // txtArchivo
+            // imageList1
             // 
-            this.txtArchivo.Location = new System.Drawing.Point(117, 244);
-            this.txtArchivo.Name = "txtArchivo";
-            this.txtArchivo.Size = new System.Drawing.Size(100, 20);
-            this.txtArchivo.TabIndex = 7;
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "carpeta.png");
+            this.imageList1.Images.SetKeyName(1, "archivo.png");
             // 
-            // lblNom
+            // listView1
             // 
-            this.lblNom.AutoSize = true;
-            this.lblNom.Location = new System.Drawing.Point(11, 244);
-            this.lblNom.Name = "lblNom";
-            this.lblNom.Size = new System.Drawing.Size(100, 13);
-            this.lblNom.TabIndex = 8;
-            this.lblNom.Text = "Nombre del Archivo";
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Nombre,
+            this.Tipo,
+            this.Detalles});
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(0, 0);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(273, 415);
+            this.listView1.SmallImageList = this.imageList1;
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // Nombre
+            // 
+            this.Nombre.Text = "Nombre";
+            this.Nombre.Width = 78;
+            // 
+            // Tipo
+            // 
+            this.Tipo.Text = "Tipo";
+            // 
+            // Detalles
+            // 
+            this.Detalles.Text = "Ultima Modificacion";
+            this.Detalles.Width = 85;
             // 
             // frmCarpetas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(537, 450);
-            this.Controls.Add(this.lblNom);
-            this.Controls.Add(this.txtArchivo);
-            this.Controls.Add(this.txtWrite);
-            this.Controls.Add(this.btnGrabar);
-            this.Controls.Add(this.txtShow);
-            this.Controls.Add(this.lblEjemplo);
+            this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.btnCarpetas);
-            this.Controls.Add(this.lstFiles);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCarpetas";
             this.Text = "frmCarpetas";
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.FolderBrowserDialog listaCarpetas;
-        private System.Windows.Forms.ListView lstFiles;
         private System.Windows.Forms.Button btnCarpetas;
-        private System.Windows.Forms.Label lblEjemplo;
-        private System.Windows.Forms.TextBox txtShow;
-        private System.Windows.Forms.Button btnGrabar;
-        private System.Windows.Forms.TextBox txtWrite;
-        private System.Windows.Forms.TextBox txtArchivo;
-        private System.Windows.Forms.Label lblNom;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader Nombre;
+        private System.Windows.Forms.ColumnHeader Tipo;
+        private System.Windows.Forms.ColumnHeader Detalles;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
