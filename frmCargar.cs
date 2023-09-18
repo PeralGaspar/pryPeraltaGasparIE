@@ -17,6 +17,14 @@ namespace pryPeraltaGasparIE
         {
             InitializeComponent();
         }
+        public bool BanderaNum = false;
+        public bool BanderaEnt = false;
+        public bool BanderaDir = false;
+        public bool BanderaAper = false;
+        public bool BanderaNExp = false;
+        public bool BanderaJuz = false;
+        public bool BanderaJur = false;
+        public bool BanderaRes = false;
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -66,6 +74,15 @@ namespace pryPeraltaGasparIE
             txtJuz.Focus();
             txtNExpe.Focus();
             txtRespon.Focus();
+        }
+
+        private void txtNum_TextChanged(object sender, EventArgs e)
+        {
+            BanderaNum = false;
+            if (Int32.TryParse(txtNum.Text, out Int32 result))
+            {
+                BanderaNum = true;
+            }
         }
     }
 }

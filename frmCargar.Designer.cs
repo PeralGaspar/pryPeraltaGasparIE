@@ -73,6 +73,7 @@ namespace pryPeraltaGasparIE
             // 
             // btnGrabar
             // 
+            this.btnGrabar.Enabled = false;
             this.btnGrabar.Location = new System.Drawing.Point(380, 186);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(100, 35);
@@ -87,6 +88,7 @@ namespace pryPeraltaGasparIE
             this.txtNum.Name = "txtNum";
             this.txtNum.Size = new System.Drawing.Size(100, 20);
             this.txtNum.TabIndex = 3;
+            this.txtNum.TextChanged += new System.EventHandler(this.txtNum_TextChanged);
             // 
             // lblNum
             // 
