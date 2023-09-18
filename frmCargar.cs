@@ -22,6 +22,8 @@ namespace pryPeraltaGasparIE
         {
             string leerlinea = "";
             string[] separarDatos = new string[0];
+            dataGridView1.Columns.Clear();
+            dataGridView1.DataSource = null;
             StreamReader grilla = new StreamReader(@"../../" + "Resources/Listado de aseguradores.csv");
             leerlinea = grilla.ReadLine();
             separarDatos = leerlinea.Split(';');
