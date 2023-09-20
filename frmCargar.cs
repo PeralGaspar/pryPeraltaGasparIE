@@ -17,14 +17,6 @@ namespace pryPeraltaGasparIE
         {
             InitializeComponent();
         }
-        public bool BanderaNum = false;
-        public bool BanderaEnt = false;
-        public bool BanderaDir = false;
-        public bool BanderaAper = false;
-        public bool BanderaNExp = false;
-        public bool BanderaJuz = false;
-        public bool BanderaJur = false;
-        public bool BanderaRes = false;
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -74,14 +66,50 @@ namespace pryPeraltaGasparIE
             txtJuz.Focus();
             txtNExpe.Focus();
             txtRespon.Focus();
+            btnGrabar.Enabled = false;
+            txtNum.Enabled = true;
+            txtAper.Enabled = true;
+            txtDir.Enabled = true;
+            txtEnt.Enabled = true;
+            txtJuriz.Enabled = true;
+            txtJuz.Enabled = true;
+            txtNExpe.Enabled = true;
+            txtRespon.Enabled = true;
         }
 
         private void txtNum_TextChanged(object sender, EventArgs e)
         {
-            BanderaNum = false;
-            if (Int32.TryParse(txtNum.Text, out Int32 result))
+        }
+
+        private void btnVerificar_Click(object sender, EventArgs e)
+        {
+            if(Int32.TryParse(txtNum.Text, out Int32 result)&& Int32.TryParse(txtNExpe.Text, out Int32 result2)
+                &&txtAper.Text!=null && txtDir != null && txtRespon.Text != null && txtEnt.Text != null && txtJuz.Text != null
+                && txtJuriz.Text != null && btnGrabar.Enabled == false)
             {
-                BanderaNum = true;
+                btnGrabar.Enabled = true;
+                txtNum.Enabled = false;
+                txtAper.Enabled = false;
+                txtDir.Enabled = false;
+                txtEnt.Enabled = false;
+                txtJuriz.Enabled = false;
+                txtJuz.Enabled = false;
+                txtNExpe.Enabled = false;
+                txtRespon.Enabled = false;
+                MessageBox.Show("Datos Validos");
+            }
+            else
+            {
+                btnGrabar.Enabled = false;
+                txtNum.Enabled = true;
+                txtAper.Enabled = true;
+                txtDir.Enabled = true;
+                txtEnt.Enabled = true;
+                txtJuriz.Enabled = true;
+                txtJuz.Enabled = true;
+                txtNExpe.Enabled = true;
+                txtRespon.Enabled = true;
+                MessageBox.Show("Edicion de Datos Habilitada");
             }
         }
     }

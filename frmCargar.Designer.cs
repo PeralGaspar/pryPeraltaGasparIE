@@ -35,20 +35,21 @@ namespace pryPeraltaGasparIE
             this.txtNum = new System.Windows.Forms.TextBox();
             this.lblNum = new System.Windows.Forms.Label();
             this.grpDatos = new System.Windows.Forms.GroupBox();
-            this.lblEnt = new System.Windows.Forms.Label();
-            this.lblAper = new System.Windows.Forms.Label();
-            this.lblNExpe = new System.Windows.Forms.Label();
-            this.lblJuz = new System.Windows.Forms.Label();
-            this.lblJuriz = new System.Windows.Forms.Label();
-            this.lblDir = new System.Windows.Forms.Label();
-            this.lblRespon = new System.Windows.Forms.Label();
-            this.txtEnt = new System.Windows.Forms.TextBox();
-            this.txtAper = new System.Windows.Forms.TextBox();
-            this.txtNExpe = new System.Windows.Forms.TextBox();
-            this.txtJuz = new System.Windows.Forms.TextBox();
-            this.txtJuriz = new System.Windows.Forms.TextBox();
-            this.txtDir = new System.Windows.Forms.TextBox();
             this.txtRespon = new System.Windows.Forms.TextBox();
+            this.txtDir = new System.Windows.Forms.TextBox();
+            this.txtJuriz = new System.Windows.Forms.TextBox();
+            this.txtJuz = new System.Windows.Forms.TextBox();
+            this.txtNExpe = new System.Windows.Forms.TextBox();
+            this.txtAper = new System.Windows.Forms.TextBox();
+            this.txtEnt = new System.Windows.Forms.TextBox();
+            this.lblRespon = new System.Windows.Forms.Label();
+            this.lblDir = new System.Windows.Forms.Label();
+            this.lblJuriz = new System.Windows.Forms.Label();
+            this.lblJuz = new System.Windows.Forms.Label();
+            this.lblNExpe = new System.Windows.Forms.Label();
+            this.lblAper = new System.Windows.Forms.Label();
+            this.lblEnt = new System.Windows.Forms.Label();
+            this.btnVerificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.grpDatos.SuspendLayout();
             this.SuspendLayout();
@@ -101,6 +102,7 @@ namespace pryPeraltaGasparIE
             // 
             // grpDatos
             // 
+            this.grpDatos.Controls.Add(this.btnVerificar);
             this.grpDatos.Controls.Add(this.txtRespon);
             this.grpDatos.Controls.Add(this.txtDir);
             this.grpDatos.Controls.Add(this.txtJuriz);
@@ -125,59 +127,54 @@ namespace pryPeraltaGasparIE
             this.grpDatos.TabStop = false;
             this.grpDatos.Text = "Datos";
             // 
-            // lblEnt
+            // txtRespon
             // 
-            this.lblEnt.AutoSize = true;
-            this.lblEnt.Location = new System.Drawing.Point(6, 65);
-            this.lblEnt.Name = "lblEnt";
-            this.lblEnt.Size = new System.Drawing.Size(43, 13);
-            this.lblEnt.TabIndex = 5;
-            this.lblEnt.Text = "Entidad";
+            this.txtRespon.Location = new System.Drawing.Point(380, 135);
+            this.txtRespon.Name = "txtRespon";
+            this.txtRespon.Size = new System.Drawing.Size(100, 20);
+            this.txtRespon.TabIndex = 18;
             // 
-            // lblAper
+            // txtDir
             // 
-            this.lblAper.AutoSize = true;
-            this.lblAper.Location = new System.Drawing.Point(6, 101);
-            this.lblAper.Name = "lblAper";
-            this.lblAper.Size = new System.Drawing.Size(47, 13);
-            this.lblAper.TabIndex = 6;
-            this.lblAper.Text = "Apertura";
+            this.txtDir.Location = new System.Drawing.Point(380, 94);
+            this.txtDir.Name = "txtDir";
+            this.txtDir.Size = new System.Drawing.Size(100, 20);
+            this.txtDir.TabIndex = 17;
             // 
-            // lblNExpe
+            // txtJuriz
             // 
-            this.lblNExpe.AutoSize = true;
-            this.lblNExpe.Location = new System.Drawing.Point(6, 138);
-            this.lblNExpe.Name = "lblNExpe";
-            this.lblNExpe.Size = new System.Drawing.Size(75, 13);
-            this.lblNExpe.TabIndex = 7;
-            this.lblNExpe.Text = "Nº Expediente";
+            this.txtJuriz.Location = new System.Drawing.Point(380, 62);
+            this.txtJuriz.Name = "txtJuriz";
+            this.txtJuriz.Size = new System.Drawing.Size(100, 20);
+            this.txtJuriz.TabIndex = 16;
             // 
-            // lblJuz
+            // txtJuz
             // 
-            this.lblJuz.AutoSize = true;
-            this.lblJuz.Location = new System.Drawing.Point(232, 29);
-            this.lblJuz.Name = "lblJuz";
-            this.lblJuz.Size = new System.Drawing.Size(47, 13);
-            this.lblJuz.TabIndex = 8;
-            this.lblJuz.Text = "Juzgado";
+            this.txtJuz.Location = new System.Drawing.Point(380, 26);
+            this.txtJuz.Name = "txtJuz";
+            this.txtJuz.Size = new System.Drawing.Size(100, 20);
+            this.txtJuz.TabIndex = 15;
             // 
-            // lblJuriz
+            // txtNExpe
             // 
-            this.lblJuriz.AutoSize = true;
-            this.lblJuriz.Location = new System.Drawing.Point(227, 65);
-            this.lblJuriz.Name = "lblJuriz";
-            this.lblJuriz.Size = new System.Drawing.Size(62, 13);
-            this.lblJuriz.TabIndex = 9;
-            this.lblJuriz.Text = "Jurizdicción";
+            this.txtNExpe.Location = new System.Drawing.Point(106, 135);
+            this.txtNExpe.Name = "txtNExpe";
+            this.txtNExpe.Size = new System.Drawing.Size(100, 20);
+            this.txtNExpe.TabIndex = 14;
             // 
-            // lblDir
+            // txtAper
             // 
-            this.lblDir.AutoSize = true;
-            this.lblDir.Location = new System.Drawing.Point(227, 97);
-            this.lblDir.Name = "lblDir";
-            this.lblDir.Size = new System.Drawing.Size(52, 13);
-            this.lblDir.TabIndex = 10;
-            this.lblDir.Text = "Dirección";
+            this.txtAper.Location = new System.Drawing.Point(106, 98);
+            this.txtAper.Name = "txtAper";
+            this.txtAper.Size = new System.Drawing.Size(100, 20);
+            this.txtAper.TabIndex = 13;
+            // 
+            // txtEnt
+            // 
+            this.txtEnt.Location = new System.Drawing.Point(106, 62);
+            this.txtEnt.Name = "txtEnt";
+            this.txtEnt.Size = new System.Drawing.Size(100, 20);
+            this.txtEnt.TabIndex = 12;
             // 
             // lblRespon
             // 
@@ -188,54 +185,69 @@ namespace pryPeraltaGasparIE
             this.lblRespon.TabIndex = 11;
             this.lblRespon.Text = "Liquidador Responsable";
             // 
-            // txtEnt
+            // lblDir
             // 
-            this.txtEnt.Location = new System.Drawing.Point(106, 62);
-            this.txtEnt.Name = "txtEnt";
-            this.txtEnt.Size = new System.Drawing.Size(100, 20);
-            this.txtEnt.TabIndex = 12;
+            this.lblDir.AutoSize = true;
+            this.lblDir.Location = new System.Drawing.Point(227, 97);
+            this.lblDir.Name = "lblDir";
+            this.lblDir.Size = new System.Drawing.Size(52, 13);
+            this.lblDir.TabIndex = 10;
+            this.lblDir.Text = "Dirección";
             // 
-            // txtAper
+            // lblJuriz
             // 
-            this.txtAper.Location = new System.Drawing.Point(106, 98);
-            this.txtAper.Name = "txtAper";
-            this.txtAper.Size = new System.Drawing.Size(100, 20);
-            this.txtAper.TabIndex = 13;
+            this.lblJuriz.AutoSize = true;
+            this.lblJuriz.Location = new System.Drawing.Point(227, 65);
+            this.lblJuriz.Name = "lblJuriz";
+            this.lblJuriz.Size = new System.Drawing.Size(62, 13);
+            this.lblJuriz.TabIndex = 9;
+            this.lblJuriz.Text = "Jurizdicción";
             // 
-            // txtNExpe
+            // lblJuz
             // 
-            this.txtNExpe.Location = new System.Drawing.Point(106, 135);
-            this.txtNExpe.Name = "txtNExpe";
-            this.txtNExpe.Size = new System.Drawing.Size(100, 20);
-            this.txtNExpe.TabIndex = 14;
+            this.lblJuz.AutoSize = true;
+            this.lblJuz.Location = new System.Drawing.Point(232, 29);
+            this.lblJuz.Name = "lblJuz";
+            this.lblJuz.Size = new System.Drawing.Size(47, 13);
+            this.lblJuz.TabIndex = 8;
+            this.lblJuz.Text = "Juzgado";
             // 
-            // txtJuz
+            // lblNExpe
             // 
-            this.txtJuz.Location = new System.Drawing.Point(380, 26);
-            this.txtJuz.Name = "txtJuz";
-            this.txtJuz.Size = new System.Drawing.Size(100, 20);
-            this.txtJuz.TabIndex = 15;
+            this.lblNExpe.AutoSize = true;
+            this.lblNExpe.Location = new System.Drawing.Point(6, 138);
+            this.lblNExpe.Name = "lblNExpe";
+            this.lblNExpe.Size = new System.Drawing.Size(75, 13);
+            this.lblNExpe.TabIndex = 7;
+            this.lblNExpe.Text = "Nº Expediente";
             // 
-            // txtJuriz
+            // lblAper
             // 
-            this.txtJuriz.Location = new System.Drawing.Point(380, 62);
-            this.txtJuriz.Name = "txtJuriz";
-            this.txtJuriz.Size = new System.Drawing.Size(100, 20);
-            this.txtJuriz.TabIndex = 16;
+            this.lblAper.AutoSize = true;
+            this.lblAper.Location = new System.Drawing.Point(6, 101);
+            this.lblAper.Name = "lblAper";
+            this.lblAper.Size = new System.Drawing.Size(47, 13);
+            this.lblAper.TabIndex = 6;
+            this.lblAper.Text = "Apertura";
             // 
-            // txtDir
+            // lblEnt
             // 
-            this.txtDir.Location = new System.Drawing.Point(380, 94);
-            this.txtDir.Name = "txtDir";
-            this.txtDir.Size = new System.Drawing.Size(100, 20);
-            this.txtDir.TabIndex = 17;
+            this.lblEnt.AutoSize = true;
+            this.lblEnt.Location = new System.Drawing.Point(6, 65);
+            this.lblEnt.Name = "lblEnt";
+            this.lblEnt.Size = new System.Drawing.Size(43, 13);
+            this.lblEnt.TabIndex = 5;
+            this.lblEnt.Text = "Entidad";
             // 
-            // txtRespon
+            // btnVerificar
             // 
-            this.txtRespon.Location = new System.Drawing.Point(380, 135);
-            this.txtRespon.Name = "txtRespon";
-            this.txtRespon.Size = new System.Drawing.Size(100, 20);
-            this.txtRespon.TabIndex = 18;
+            this.btnVerificar.Location = new System.Drawing.Point(273, 186);
+            this.btnVerificar.Name = "btnVerificar";
+            this.btnVerificar.Size = new System.Drawing.Size(88, 35);
+            this.btnVerificar.TabIndex = 19;
+            this.btnVerificar.Text = "Verificar";
+            this.btnVerificar.UseVisualStyleBackColor = true;
+            this.btnVerificar.Click += new System.EventHandler(this.btnVerificar_Click);
             // 
             // frmCargar
             // 
@@ -276,5 +288,6 @@ namespace pryPeraltaGasparIE
         private System.Windows.Forms.Label lblNExpe;
         private System.Windows.Forms.Label lblAper;
         private System.Windows.Forms.Label lblEnt;
+        private System.Windows.Forms.Button btnVerificar;
     }
 }
