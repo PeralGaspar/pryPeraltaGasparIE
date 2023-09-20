@@ -1,7 +1,7 @@
 ﻿
 namespace pryPeraltaGasparIE
 {
-    partial class frmCargar
+    partial class frmProvedores
     {
         /// <summary>
         /// Required designer variable.
@@ -29,11 +29,6 @@ namespace pryPeraltaGasparIE
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnGrabar = new System.Windows.Forms.Button();
-            this.txtNum = new System.Windows.Forms.TextBox();
-            this.lblNum = new System.Windows.Forms.Label();
             this.grpDatos = new System.Windows.Forms.GroupBox();
             this.btnVerificar = new System.Windows.Forms.Button();
             this.txtRespon = new System.Windows.Forms.TextBox();
@@ -50,55 +45,14 @@ namespace pryPeraltaGasparIE
             this.lblNExpe = new System.Windows.Forms.Label();
             this.lblAper = new System.Windows.Forms.Label();
             this.lblEnt = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.lblNum = new System.Windows.Forms.Label();
+            this.btnGrabar = new System.Windows.Forms.Button();
+            this.txtNum = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.grpDatos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(13, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Cargar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 42);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(521, 171);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // btnGrabar
-            // 
-            this.btnGrabar.Enabled = false;
-            this.btnGrabar.Location = new System.Drawing.Point(380, 186);
-            this.btnGrabar.Name = "btnGrabar";
-            this.btnGrabar.Size = new System.Drawing.Size(100, 35);
-            this.btnGrabar.TabIndex = 2;
-            this.btnGrabar.Text = "Grabar";
-            this.btnGrabar.UseVisualStyleBackColor = true;
-            this.btnGrabar.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // txtNum
-            // 
-            this.txtNum.Location = new System.Drawing.Point(106, 26);
-            this.txtNum.Name = "txtNum";
-            this.txtNum.Size = new System.Drawing.Size(100, 20);
-            this.txtNum.TabIndex = 3;
-            this.txtNum.TextChanged += new System.EventHandler(this.txtNum_TextChanged);
-            // 
-            // lblNum
-            // 
-            this.lblNum.AutoSize = true;
-            this.lblNum.Location = new System.Drawing.Point(6, 29);
-            this.lblNum.Name = "lblNum";
-            this.lblNum.Size = new System.Drawing.Size(19, 13);
-            this.lblNum.TabIndex = 4;
-            this.lblNum.Text = "Nº";
             // 
             // grpDatos
             // 
@@ -120,10 +74,10 @@ namespace pryPeraltaGasparIE
             this.grpDatos.Controls.Add(this.lblNum);
             this.grpDatos.Controls.Add(this.btnGrabar);
             this.grpDatos.Controls.Add(this.txtNum);
-            this.grpDatos.Location = new System.Drawing.Point(12, 243);
+            this.grpDatos.Location = new System.Drawing.Point(12, 236);
             this.grpDatos.Name = "grpDatos";
             this.grpDatos.Size = new System.Drawing.Size(521, 235);
-            this.grpDatos.TabIndex = 5;
+            this.grpDatos.TabIndex = 8;
             this.grpDatos.TabStop = false;
             this.grpDatos.Text = "Datos";
             // 
@@ -135,7 +89,6 @@ namespace pryPeraltaGasparIE
             this.btnVerificar.TabIndex = 19;
             this.btnVerificar.Text = "Verificar";
             this.btnVerificar.UseVisualStyleBackColor = true;
-            this.btnVerificar.Click += new System.EventHandler(this.btnVerificar_Click);
             // 
             // txtRespon
             // 
@@ -249,32 +202,70 @@ namespace pryPeraltaGasparIE
             this.lblEnt.TabIndex = 5;
             this.lblEnt.Text = "Entidad";
             // 
-            // frmCargar
+            // lblNum
+            // 
+            this.lblNum.AutoSize = true;
+            this.lblNum.Location = new System.Drawing.Point(6, 29);
+            this.lblNum.Name = "lblNum";
+            this.lblNum.Size = new System.Drawing.Size(19, 13);
+            this.lblNum.TabIndex = 4;
+            this.lblNum.Text = "Nº";
+            // 
+            // btnGrabar
+            // 
+            this.btnGrabar.Enabled = false;
+            this.btnGrabar.Location = new System.Drawing.Point(380, 186);
+            this.btnGrabar.Name = "btnGrabar";
+            this.btnGrabar.Size = new System.Drawing.Size(100, 35);
+            this.btnGrabar.TabIndex = 2;
+            this.btnGrabar.Text = "Grabar";
+            this.btnGrabar.UseVisualStyleBackColor = true;
+            // 
+            // txtNum
+            // 
+            this.txtNum.Location = new System.Drawing.Point(106, 26);
+            this.txtNum.Name = "txtNum";
+            this.txtNum.Size = new System.Drawing.Size(100, 20);
+            this.txtNum.TabIndex = 3;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 35);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(521, 171);
+            this.dataGridView1.TabIndex = 7;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(13, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Cargar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // frmProvedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(545, 493);
+            this.ClientSize = new System.Drawing.Size(548, 524);
             this.Controls.Add(this.grpDatos);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
-            this.Name = "frmCargar";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmCargar";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Name = "frmProvedores";
+            this.Text = "frmProvedores";
             this.grpDatos.ResumeLayout(false);
             this.grpDatos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnGrabar;
-        private System.Windows.Forms.TextBox txtNum;
-        private System.Windows.Forms.Label lblNum;
         private System.Windows.Forms.GroupBox grpDatos;
+        private System.Windows.Forms.Button btnVerificar;
         private System.Windows.Forms.TextBox txtRespon;
         private System.Windows.Forms.TextBox txtDir;
         private System.Windows.Forms.TextBox txtJuriz;
@@ -289,6 +280,10 @@ namespace pryPeraltaGasparIE
         private System.Windows.Forms.Label lblNExpe;
         private System.Windows.Forms.Label lblAper;
         private System.Windows.Forms.Label lblEnt;
-        private System.Windows.Forms.Button btnVerificar;
+        private System.Windows.Forms.Label lblNum;
+        private System.Windows.Forms.Button btnGrabar;
+        private System.Windows.Forms.TextBox txtNum;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button1;
     }
 }

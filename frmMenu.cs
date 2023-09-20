@@ -16,5 +16,31 @@ namespace pryPeraltaGasparIE
         {
             InitializeComponent();
         }
+
+        private void frmMenu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAseguradores_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form aseguradores = new frmCargar();
+            aseguradores.Show();
+        }
+
+        private void btnCarpetas_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form carpetas = new frmCarpetas();
+            carpetas.Show();
+        }
+
+        private void btnProveedores_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form proveedores = new frmProvedores();
+            proveedores.Show();
+        }
     }
 }

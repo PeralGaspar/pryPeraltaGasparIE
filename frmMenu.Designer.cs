@@ -29,34 +29,62 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.btnAseguradores = new System.Windows.Forms.Button();
+            this.btnCarpetas = new System.Windows.Forms.Button();
+            this.btnProveedores = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // btnAseguradores
             // 
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(469, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.btnAseguradores.Location = new System.Drawing.Point(76, 35);
+            this.btnAseguradores.Name = "btnAseguradores";
+            this.btnAseguradores.Size = new System.Drawing.Size(158, 53);
+            this.btnAseguradores.TabIndex = 1;
+            this.btnAseguradores.Text = "ASEGURADORES";
+            this.btnAseguradores.UseVisualStyleBackColor = true;
+            this.btnAseguradores.Click += new System.EventHandler(this.btnAseguradores_Click);
+            // 
+            // btnCarpetas
+            // 
+            this.btnCarpetas.Location = new System.Drawing.Point(76, 136);
+            this.btnCarpetas.Name = "btnCarpetas";
+            this.btnCarpetas.Size = new System.Drawing.Size(158, 53);
+            this.btnCarpetas.TabIndex = 2;
+            this.btnCarpetas.Text = "CARPETAS";
+            this.btnCarpetas.UseVisualStyleBackColor = true;
+            this.btnCarpetas.Click += new System.EventHandler(this.btnCarpetas_Click);
+            // 
+            // btnProveedores
+            // 
+            this.btnProveedores.Location = new System.Drawing.Point(76, 237);
+            this.btnProveedores.Name = "btnProveedores";
+            this.btnProveedores.Size = new System.Drawing.Size(158, 53);
+            this.btnProveedores.TabIndex = 3;
+            this.btnProveedores.Text = "PROVEEDORES";
+            this.btnProveedores.UseVisualStyleBackColor = true;
+            this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
             // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(469, 450);
-            this.Controls.Add(this.menuStrip1);
+            this.ClientSize = new System.Drawing.Size(323, 329);
+            this.Controls.Add(this.btnProveedores);
+            this.Controls.Add(this.btnCarpetas);
+            this.Controls.Add(this.btnAseguradores);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
+            this.Load += new System.EventHandler(this.frmMenu_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.Button btnAseguradores;
+        private System.Windows.Forms.Button btnCarpetas;
+        private System.Windows.Forms.Button btnProveedores;
     }
 }

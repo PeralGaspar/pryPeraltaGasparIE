@@ -16,7 +16,7 @@ namespace pryPeraltaGasparIE
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmCargar());
+            Application.Run(new frmMain());
         }
     }
 }

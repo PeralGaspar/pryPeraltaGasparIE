@@ -16,5 +16,31 @@ namespace pryPeraltaGasparIE
         {
             InitializeComponent();
         }
+        public string[] usuarios = {"Gaspar", "Profe"};
+        public string[] contraseña = { "Shedinja", "123"};
+        public Int32 cod = -1;
+        private void txtContraseña_TextChanged(object sender, EventArgs e)
+        {
+            if (txtContraseña.Text == contraseña[cod])
+            {
+                Form menu = new frmMenu();
+                menu.Show();
+                this.Hide();
+            }
+        }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+            if (usuarios.Contains(txtUsuario.Text))
+            {
+                for (int i = 0; i < usuarios.Length; i++)
+                {
+                    if (usuarios[i] == txtUsuario.Text)
+                    {
+                        cod = i;
+                    }
+                }
+            }
+        }
     }
 }
