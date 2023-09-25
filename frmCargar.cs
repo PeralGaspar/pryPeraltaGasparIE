@@ -16,10 +16,6 @@ namespace pryPeraltaGasparIE
         public frmCargar()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
             string leerlinea = "";
             string[] separarDatos = new string[0];
             dataGridView1.Columns.Clear();
@@ -32,12 +28,17 @@ namespace pryPeraltaGasparIE
                 dataGridView1.Columns.Add(var, var);
             }
             while (grilla.EndOfStream == false)
-                {
+            {
                 leerlinea = grilla.ReadLine();
                 separarDatos = leerlinea.Split(';');
                 dataGridView1.Rows.Add(separarDatos);
-                }
+            }
             grilla.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -111,6 +112,38 @@ namespace pryPeraltaGasparIE
                 txtRespon.Enabled = true;
                 MessageBox.Show("Edicion de Datos Habilitada");
             }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Int32 ID = dataGridView1.CurrentCell.RowIndex;
+            dataGridView1.Rows[ID].SetValues(txtNum.Text, txtEnt.Text,txtAper.Text,txtNExpe.Text,txtJuz.Text,txtJuriz.Text,txtDir,txtRespon.Text);
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnEliminar.Enabled = true;
+            btnModificar.Enabled = true;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Int32 ID = dataGridView1.CurrentCell.RowIndex;
+            dataGridView1.Rows.RemoveAt(ID);
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            String nuevo = "";
+            StreamWriter objSw = new StreamWriter(@"../../" + "Resources/Backup Aseguradores.csv", true);
+            objSw.WriteLine(nuevo);
+            for (Int32 i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                nuevo = dataGridView1.Rows[i].ToString();
+                objSw.WriteLine(nuevo);
+            }
+            objSw.Close();
         }
     }
 }

@@ -29,7 +29,6 @@ namespace pryPeraltaGasparIE
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.txtNum = new System.Windows.Forms.TextBox();
@@ -50,27 +49,25 @@ namespace pryPeraltaGasparIE
             this.lblNExpe = new System.Windows.Forms.Label();
             this.lblAper = new System.Windows.Forms.Label();
             this.lblEnt = new System.Windows.Forms.Label();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.lblInfo = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.grpDatos.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(13, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Cargar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 42);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(521, 171);
+            this.dataGridView1.Size = new System.Drawing.Size(669, 210);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnGrabar
             // 
@@ -122,14 +119,14 @@ namespace pryPeraltaGasparIE
             this.grpDatos.Controls.Add(this.txtNum);
             this.grpDatos.Location = new System.Drawing.Point(12, 243);
             this.grpDatos.Name = "grpDatos";
-            this.grpDatos.Size = new System.Drawing.Size(521, 235);
+            this.grpDatos.Size = new System.Drawing.Size(502, 235);
             this.grpDatos.TabIndex = 5;
             this.grpDatos.TabStop = false;
             this.grpDatos.Text = "Datos";
             // 
             // btnVerificar
             // 
-            this.btnVerificar.Location = new System.Drawing.Point(273, 186);
+            this.btnVerificar.Location = new System.Drawing.Point(275, 186);
             this.btnVerificar.Name = "btnVerificar";
             this.btnVerificar.Size = new System.Drawing.Size(88, 35);
             this.btnVerificar.TabIndex = 19;
@@ -249,27 +246,91 @@ namespace pryPeraltaGasparIE
             this.lblEnt.TabIndex = 5;
             this.lblEnt.Text = "Entidad";
             // 
+            // btnModificar
+            // 
+            this.btnModificar.Enabled = false;
+            this.btnModificar.Location = new System.Drawing.Point(36, 107);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(88, 35);
+            this.btnModificar.TabIndex = 20;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Enabled = false;
+            this.btnEliminar.Location = new System.Drawing.Point(36, 162);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(88, 35);
+            this.btnEliminar.TabIndex = 21;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // lblInfo
+            // 
+            this.lblInfo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblInfo.Location = new System.Drawing.Point(6, 24);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(149, 49);
+            this.lblInfo.TabIndex = 22;
+            this.lblInfo.Text = "Seleccione una fila para modificar o elminar";
+            this.lblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lblInfo);
+            this.groupBox1.Controls.Add(this.btnEliminar);
+            this.groupBox1.Controls.Add(this.btnModificar);
+            this.groupBox1.Location = new System.Drawing.Point(520, 252);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(161, 226);
+            this.groupBox1.TabIndex = 23;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Baja y Modificacion";
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(556, 489);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(88, 35);
+            this.btnGuardar.TabIndex = 24;
+            this.btnGuardar.Text = "Guardar Cambios";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(21, 489);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(88, 35);
+            this.btnVolver.TabIndex = 25;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            // 
             // frmCargar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(545, 493);
+            this.ClientSize = new System.Drawing.Size(693, 536);
+            this.Controls.Add(this.btnVolver);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grpDatos);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
             this.Name = "frmCargar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCargar";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.grpDatos.ResumeLayout(false);
             this.grpDatos.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnGrabar;
         private System.Windows.Forms.TextBox txtNum;
@@ -290,5 +351,11 @@ namespace pryPeraltaGasparIE
         private System.Windows.Forms.Label lblAper;
         private System.Windows.Forms.Label lblEnt;
         private System.Windows.Forms.Button btnVerificar;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Label lblInfo;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

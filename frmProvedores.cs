@@ -16,5 +16,15 @@ namespace pryPeraltaGasparIE
         {
             InitializeComponent();
         }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGrabar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
