@@ -68,6 +68,7 @@ namespace pryPeraltaGasparIE
             this.dataGridView1.Size = new System.Drawing.Size(669, 210);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // btnGrabar
             // 
@@ -308,6 +309,7 @@ namespace pryPeraltaGasparIE
             this.btnVolver.TabIndex = 25;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // frmCargar
             // 

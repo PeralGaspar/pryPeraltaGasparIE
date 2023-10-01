@@ -43,13 +43,8 @@ namespace pryPeraltaGasparIE
 
         private void button2_Click(object sender, EventArgs e)
         {
-            String nuevo = "";
-            StreamWriter objSw = new StreamWriter(@"../../" + "Resources/Listado de aseguradores.csv", true);
-            nuevo = txtNum.Text + ";" + txtEnt.Text + ";" + txtAper.Text + ";" + txtNExpe + ";"
-                + txtJuz.Text + ";" + txtJuriz.Text + ";" + txtDir.Text + ";" + txtRespon.Text;
-            objSw.WriteLine(nuevo);
-            
-            objSw.Close();
+            dataGridView1.Rows.Add(txtNum.Text, txtEnt.Text, txtAper.Text, txtNExpe.Text, txtJuz.Text, txtJuriz.Text,txtDir.Text, txtRespon.Text);
+           
             MessageBox.Show("Registrado");
             txtNum.Text = "";
             txtAper.Text = "";
@@ -84,8 +79,8 @@ namespace pryPeraltaGasparIE
 
         private void btnVerificar_Click(object sender, EventArgs e)
         {
-            if(Int32.TryParse(txtNum.Text, out Int32 result)&& Int32.TryParse(txtNExpe.Text, out Int32 result2)
-                &&txtAper.Text!=null && txtDir != null && txtRespon.Text != null && txtEnt.Text != null && txtJuz.Text != null
+            if(Int32.TryParse(txtNum.Text, out Int32 result)&& txtNExpe.Text != null
+                &&txtAper.Text !=null && txtDir.Text != null && txtRespon.Text != null && txtEnt.Text != null && txtJuz.Text != null
                 && txtJuriz.Text != null && btnGrabar.Enabled == false)
             {
                 btnGrabar.Enabled = true;
@@ -97,6 +92,7 @@ namespace pryPeraltaGasparIE
                 txtJuz.Enabled = false;
                 txtNExpe.Enabled = false;
                 txtRespon.Enabled = false;
+                btnVerificar.Text = "Editar Datos";
                 MessageBox.Show("Datos Validos");
             }
             else
@@ -110,6 +106,7 @@ namespace pryPeraltaGasparIE
                 txtJuz.Enabled = true;
                 txtNExpe.Enabled = true;
                 txtRespon.Enabled = true;
+                btnVerificar.Text = "Verificar";
                 MessageBox.Show("Edicion de Datos Habilitada");
             }
         }
@@ -118,19 +115,18 @@ namespace pryPeraltaGasparIE
         {
             Int32 ID = dataGridView1.CurrentCell.RowIndex;
             dataGridView1.Rows[ID].SetValues(txtNum.Text, txtEnt.Text,txtAper.Text,txtNExpe.Text,txtJuz.Text,txtJuriz.Text,txtDir,txtRespon.Text);
-
+            MessageBox.Show("Fila Modificada");
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnEliminar.Enabled = true;
-            btnModificar.Enabled = true;
+            
         }
-
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             Int32 ID = dataGridView1.CurrentCell.RowIndex;
             dataGridView1.Rows.RemoveAt(ID);
+            MessageBox.Show("Fila Elimonada");
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -142,8 +138,31 @@ namespace pryPeraltaGasparIE
             {
                 nuevo = dataGridView1.Rows[i].ToString();
                 objSw.WriteLine(nuevo);
+                MessageBox.Show("Datos Guardados a Backup Aseguradores.csv");
             }
             objSw.Close();
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            btnEliminar.Enabled = true;
+            btnModificar.Enabled = true;
+            Int32 FilaActual = dataGridView1.CurrentRow.Index;
+            txtNum.Text = dataGridView1.Rows[FilaActual].Cells[0].Value.ToString();
+            txtEnt.Text = dataGridView1.Rows[FilaActual].Cells[1].Value.ToString();
+            txtAper.Text = dataGridView1.Rows[FilaActual].Cells[2].Value.ToString();
+            txtNExpe.Text = dataGridView1.Rows[FilaActual].Cells[3].Value.ToString();
+            txtJuz.Text = dataGridView1.Rows[FilaActual].Cells[4].Value.ToString();
+            txtJuriz.Text = dataGridView1.Rows[FilaActual].Cells[5].Value.ToString();
+            txtDir.Text = dataGridView1.Rows[FilaActual].Cells[6].Value.ToString();
+            txtRespon.Text = dataGridView1.Rows[FilaActual].Cells[7].Value.ToString();
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            frmMenu VolverMenu = new frmMenu();
+            VolverMenu.Show();
+            this.Close();
         }
     }
 }
