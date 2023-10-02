@@ -29,6 +29,7 @@ namespace pryPeraltaGasparIE
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCargar));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.txtNum = new System.Windows.Forms.TextBox();
@@ -321,9 +322,11 @@ namespace pryPeraltaGasparIE
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grpDatos);
             this.Controls.Add(this.dataGridView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmCargar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmCargar";
+            this.Text = "Gestor de Aseguradores";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.grpDatos.ResumeLayout(false);
             this.grpDatos.PerformLayout();

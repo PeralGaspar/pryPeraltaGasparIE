@@ -73,6 +73,7 @@
             this.Controls.Add(this.btnCarpetas);
             this.Controls.Add(this.btnAseguradores);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";

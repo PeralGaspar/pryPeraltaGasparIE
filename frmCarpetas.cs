@@ -67,8 +67,7 @@ namespace pryPeraltaGasparIE
         {
             
         }
-        void treeView1_NodeMouseClick(object sender,
-    TreeNodeMouseClickEventArgs e)
+        void treeView1_NodeMouseClick(object sender,TreeNodeMouseClickEventArgs e)
         {
             TreeNode newSelected = e.Node;
             listView1.Items.Clear();
@@ -99,6 +98,13 @@ namespace pryPeraltaGasparIE
             }
 
             listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            frmMenu VolverMenu = new frmMenu();
+            VolverMenu.Show();
+            this.Close();
         }
     }
 }

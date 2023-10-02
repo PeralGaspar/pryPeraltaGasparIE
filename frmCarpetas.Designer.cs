@@ -39,6 +39,7 @@
             this.Nombre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Tipo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Detalles = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -120,17 +121,29 @@
             this.Detalles.Text = "Ultima Modificacion";
             this.Detalles.Width = 85;
             // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(10, 403);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(88, 35);
+            this.btnVolver.TabIndex = 26;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // frmCarpetas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(537, 450);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.btnCarpetas);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmCarpetas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmCarpetas";
+            this.Text = "Explorador de Archivos";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -150,5 +163,6 @@
         private System.Windows.Forms.ColumnHeader Tipo;
         private System.Windows.Forms.ColumnHeader Detalles;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

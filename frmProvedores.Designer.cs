@@ -29,7 +29,9 @@ namespace pryPeraltaGasparIE
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProvedores));
             this.grpDatos = new System.Windows.Forms.GroupBox();
+            this.btnModificar = new System.Windows.Forms.Button();
             this.btnVerificar = new System.Windows.Forms.Button();
             this.txtRespon = new System.Windows.Forms.TextBox();
             this.txtDir = new System.Windows.Forms.TextBox();
@@ -50,7 +52,6 @@ namespace pryPeraltaGasparIE
             this.txtNum = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnCargar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
             this.grpDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -82,6 +83,16 @@ namespace pryPeraltaGasparIE
             this.grpDatos.TabIndex = 8;
             this.grpDatos.TabStop = false;
             this.grpDatos.Text = "Datos";
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(262, 186);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(98, 35);
+            this.btnModificar.TabIndex = 20;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnVerificar
             // 
@@ -248,16 +259,6 @@ namespace pryPeraltaGasparIE
             this.btnCargar.Text = "Cargar";
             this.btnCargar.UseVisualStyleBackColor = true;
             // 
-            // btnModificar
-            // 
-            this.btnModificar.Location = new System.Drawing.Point(262, 186);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(98, 35);
-            this.btnModificar.TabIndex = 20;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
             // frmProvedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -266,8 +267,9 @@ namespace pryPeraltaGasparIE
             this.Controls.Add(this.grpDatos);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnCargar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmProvedores";
-            this.Text = "frmProvedores";
+            this.Text = "WGS Proveedores";
             this.grpDatos.ResumeLayout(false);
             this.grpDatos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
