@@ -52,6 +52,7 @@ namespace pryPeraltaGasparIE
             this.txtNum = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnCargar = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.grpDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -259,11 +260,22 @@ namespace pryPeraltaGasparIE
             this.btnCargar.Text = "Cargar";
             this.btnCargar.UseVisualStyleBackColor = true;
             // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(21, 495);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(88, 35);
+            this.btnVolver.TabIndex = 26;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // frmProvedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(548, 488);
+            this.ClientSize = new System.Drawing.Size(548, 542);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.grpDatos);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnCargar);
@@ -301,5 +313,6 @@ namespace pryPeraltaGasparIE
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnCargar;
         private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

@@ -26,5 +26,12 @@ namespace pryPeraltaGasparIE
         {
 
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            frmMenu VolverMenu = new frmMenu();
+            VolverMenu.Show();
+            this.Close();
+        }
     }
 }
