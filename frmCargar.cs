@@ -133,13 +133,12 @@ namespace pryPeraltaGasparIE
         {
             String nuevo = "";
             StreamWriter objSw = new StreamWriter(@"../../" + "Resources/Backup Aseguradores.csv", true);
-            objSw.WriteLine(nuevo);
             for (Int32 i = 0; i < dataGridView1.Rows.Count; i++)
             {
                 nuevo = dataGridView1.Rows[i].ToString();
                 objSw.WriteLine(nuevo);
-                MessageBox.Show("Datos Guardados a Backup Aseguradores.csv");
             }
+            MessageBox.Show("Datos Guardados a Backup Aseguradores.csv");
             objSw.Close();
         }
 
