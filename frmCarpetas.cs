@@ -58,15 +58,6 @@ namespace pryPeraltaGasparIE
 
             PopulateTreeView();
         }
-
-        private void lstFiles_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-        private void treeView1_AfterSelect(object sender, EventArgs e)
-        {
-            
-        }
         private void treeView1_NodeMouseClick(object sender,TreeNodeMouseClickEventArgs e)
         {
             TreeNode newSelected = e.Node;
@@ -107,10 +98,7 @@ namespace pryPeraltaGasparIE
             this.Close();
         }
 
-        private void treeView1_MouseClick(object sender, MouseEventArgs e)
-        {
-       
-        }
+
 
         private void treeView1_NodeMouseClick_1(object sender, TreeNodeMouseClickEventArgs e)
         {
