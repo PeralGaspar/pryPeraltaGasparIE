@@ -257,7 +257,7 @@ namespace pryPeraltaGasparIE
             // btnModificar
             // 
             this.btnModificar.Enabled = false;
-            this.btnModificar.Location = new System.Drawing.Point(36, 107);
+            this.btnModificar.Location = new System.Drawing.Point(36, 102);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(88, 35);
             this.btnModificar.TabIndex = 20;
@@ -268,7 +268,7 @@ namespace pryPeraltaGasparIE
             // btnEliminar
             // 
             this.btnEliminar.Enabled = false;
-            this.btnEliminar.Location = new System.Drawing.Point(36, 162);
+            this.btnEliminar.Location = new System.Drawing.Point(36, 157);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(88, 35);
             this.btnEliminar.TabIndex = 21;
@@ -291,9 +291,9 @@ namespace pryPeraltaGasparIE
             this.groupBox1.Controls.Add(this.lblInfo);
             this.groupBox1.Controls.Add(this.btnEliminar);
             this.groupBox1.Controls.Add(this.btnModificar);
-            this.groupBox1.Location = new System.Drawing.Point(520, 252);
+            this.groupBox1.Location = new System.Drawing.Point(520, 243);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(161, 226);
+            this.groupBox1.Size = new System.Drawing.Size(161, 235);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Baja y Modificacion";
@@ -333,6 +333,7 @@ namespace pryPeraltaGasparIE
             this.Name = "frmCargar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestor de Aseguradores";
+            this.Load += new System.EventHandler(this.frmCargar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.grpDatos.ResumeLayout(false);
             this.grpDatos.PerformLayout();

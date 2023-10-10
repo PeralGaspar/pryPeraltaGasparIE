@@ -163,5 +163,10 @@ namespace pryPeraltaGasparIE
             VolverMenu.Show();
             this.Close();
         }
+
+        private void frmCargar_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

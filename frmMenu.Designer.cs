@@ -32,6 +32,7 @@
             this.btnAseguradores = new System.Windows.Forms.Button();
             this.btnCarpetas = new System.Windows.Forms.Button();
             this.btnProveedores = new System.Windows.Forms.Button();
+            this.btnUsuarios = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAseguradores
@@ -64,11 +65,22 @@
             this.btnProveedores.UseVisualStyleBackColor = true;
             this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
             // 
+            // btnUsuarios
+            // 
+            this.btnUsuarios.Location = new System.Drawing.Point(76, 332);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(158, 53);
+            this.btnUsuarios.TabIndex = 4;
+            this.btnUsuarios.Text = "USUARIOS";
+            this.btnUsuarios.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(323, 329);
+            this.ClientSize = new System.Drawing.Size(323, 430);
+            this.Controls.Add(this.btnUsuarios);
             this.Controls.Add(this.btnProveedores);
             this.Controls.Add(this.btnCarpetas);
             this.Controls.Add(this.btnAseguradores);
@@ -87,5 +99,6 @@
         private System.Windows.Forms.Button btnAseguradores;
         private System.Windows.Forms.Button btnCarpetas;
         private System.Windows.Forms.Button btnProveedores;
+        private System.Windows.Forms.Button btnUsuarios;
     }
 }

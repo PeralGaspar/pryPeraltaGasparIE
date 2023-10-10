@@ -42,5 +42,12 @@ namespace pryPeraltaGasparIE
             Form proveedores = new frmProvedores();
             proveedores.Show();
         }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form usuarios = new frmBDUsuarios();
+            usuarios.Show();
+        }
     }
 }

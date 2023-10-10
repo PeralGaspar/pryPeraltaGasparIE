@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmBDUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBDUsuarios.Designer.cs">
+      <DependentUpon>frmBDUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCargar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmBDUsuarios.resx">
+      <DependentUpon>frmBDUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCargar.resx">
       <DependentUpon>frmCargar.cs</DependentUpon>
     </EmbeddedResource>
