@@ -26,7 +26,11 @@ namespace pryPeraltaGasparIE
             OleDbCommand Comandos = new OleDbCommand(sql, Conector);
             OleDbDataReader lector;
             //Cadena de connecion
-            String Connect = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=Usuarios.accdb";
+            
+            
+            //directoryinfo
+
+            String Connect = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" +"Usuarios.accdb";
             //Asignacion
             Conector.ConnectionString = Connect;
             //Abrimos base de datos
