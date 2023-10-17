@@ -20,33 +20,31 @@ namespace pryPeraltaGasparIE
 
         private void frmBDUsuarios_Load(object sender, EventArgs e)
         {
+            String sql = "SELECT * FROM Usuarios";
             //Definicion de objetos de manejo de Base de Datos
             OleDbConnection Conector = new OleDbConnection();
-            OleDbCommand Comandos = new OleDbCommand();
+            OleDbCommand Comandos = new OleDbCommand(sql, Conector);
             OleDbDataReader lector;
             //Cadena de connecion
-            String Connect = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=@../../"+ "Resources/Usuarios.accdb";
+            String Connect = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=Usuarios.accdb";
             //Asignacion
             Conector.ConnectionString = Connect;
             //Abrimos base de datos
             Conector.Open();
             //Aignamos Comandos
             Comandos.Connection = Conector;
-            Comandos.CommandType = CommandType.TableDirect;
-            Comandos.CommandText = "Usuarios";
+            Comandos.CommandType = CommandType.Text;
+            
             //lectura de la tabla
             lector = Comandos.ExecuteReader();
             //Comprovar si existe
             if(lector.HasRows)
             {
-                String datos = "";
-
-                while(lector.Read())
-                {
-                    datos += lector.GetInt32(0).ToString() + ", " + lector.GetString(1) + lector.GetString(2);
-                }
-                //Mostrar Datos
-                lblTest.Text = datos;
+                lector.Close();
+                OleDbDataAdapter adaptador = new OleDbDataAdapter(Comandos);
+                DataTable Usuarios = new DataTable();
+                adaptador.Fill(Usuarios);
+                dgvUsuarios.DataSource = Usuarios;
             }
         }
     }

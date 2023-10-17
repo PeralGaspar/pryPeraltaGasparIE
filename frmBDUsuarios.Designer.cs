@@ -30,35 +30,35 @@ namespace pryPeraltaGasparIE
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBDUsuarios));
-            this.lblTest = new System.Windows.Forms.Label();
+            this.dgvUsuarios = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblTest
+            // dgvUsuarios
             // 
-            this.lblTest.AutoSize = true;
-            this.lblTest.Location = new System.Drawing.Point(41, 26);
-            this.lblTest.Name = "lblTest";
-            this.lblTest.Size = new System.Drawing.Size(38, 13);
-            this.lblTest.TabIndex = 0;
-            this.lblTest.Text = "lblTest";
+            this.dgvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsuarios.Location = new System.Drawing.Point(12, 12);
+            this.dgvUsuarios.Name = "dgvUsuarios";
+            this.dgvUsuarios.Size = new System.Drawing.Size(508, 150);
+            this.dgvUsuarios.TabIndex = 1;
             // 
             // frmBDUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(532, 450);
-            this.Controls.Add(this.lblTest);
+            this.Controls.Add(this.dgvUsuarios);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmBDUsuarios";
             this.Text = "Manejo de Usuarios";
             this.Load += new System.EventHandler(this.frmBDUsuarios_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblTest;
+        private System.Windows.Forms.DataGridView dgvUsuarios;
     }
 }
