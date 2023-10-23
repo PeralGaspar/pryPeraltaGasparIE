@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.IO;
 
 namespace pryPeraltaGasparIE
 {
@@ -17,39 +18,16 @@ namespace pryPeraltaGasparIE
         {
             InitializeComponent();
         }
-
+        clsControladorBD controlador = new clsControladorBD();
         private void frmBDUsuarios_Load(object sender, EventArgs e)
         {
-            String sql = "SELECT * FROM Usuarios";
-            //Definicion de objetos de manejo de Base de Datos
-            OleDbConnection Conector = new OleDbConnection();
-            OleDbCommand Comandos = new OleDbCommand(sql, Conector);
-            OleDbDataReader lector;
-            //Cadena de connecion
-            
-            
-            //directoryinfo
+            controlador.Traer_Datos(dgvUsuarios);
+        }
 
-            String Connect = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" +"Usuarios.accdb";
-            //Asignacion
-            Conector.ConnectionString = Connect;
-            //Abrimos base de datos
-            Conector.Open();
-            //Aignamos Comandos
-            Comandos.Connection = Conector;
-            Comandos.CommandType = CommandType.Text;
-            
-            //lectura de la tabla
-            lector = Comandos.ExecuteReader();
-            //Comprovar si existe
-            if(lector.HasRows)
-            {
-                lector.Close();
-                OleDbDataAdapter adaptador = new OleDbDataAdapter(Comandos);
-                DataTable Usuarios = new DataTable();
-                adaptador.Fill(Usuarios);
-                dgvUsuarios.DataSource = Usuarios;
-            }
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            Int32 ID = Int32.Parse(txtBuscar.Text);
+            controlador.Buscar_Usuario(ID);
         }
     }
 }

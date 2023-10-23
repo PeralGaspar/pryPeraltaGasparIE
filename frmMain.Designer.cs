@@ -34,6 +34,7 @@
             this.lblUsuario = new System.Windows.Forms.Label();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.lblContraseña = new System.Windows.Forms.Label();
+            this.btnConfirmar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -81,13 +82,24 @@
             this.lblContraseña.TabIndex = 4;
             this.lblContraseña.Text = "Contraseña";
             // 
+            // btnConfirmar
+            // 
+            this.btnConfirmar.Location = new System.Drawing.Point(205, 433);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(106, 35);
+            this.btnConfirmar.TabIndex = 5;
+            this.btnConfirmar.Text = "Confirmar";
+            this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::pryPeraltaGasparIE.Properties.Resources.R;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(551, 440);
+            this.ClientSize = new System.Drawing.Size(551, 480);
+            this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.lblContraseña);
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.lblUsuario);
@@ -99,6 +111,7 @@
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Wonder Guard Seguros";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,5 +124,6 @@
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.Label lblContraseña;
+        private System.Windows.Forms.Button btnConfirmar;
     }
 }

@@ -16,11 +16,14 @@ namespace pryPeraltaGasparIE
         {
             InitializeComponent();
         }
+        clsControladorBD control = new clsControladorBD();
         public string[] usuarios = {"Gaspar", "Profe"};
         public string[] contraseña = { "Shedinja", "123"};
         public Int32 cod = -1;
         private void txtContraseña_TextChanged(object sender, EventArgs e)
         {
+            
+
             if (txtContraseña.Text == contraseña[cod])
             {
                 Form menu = new frmMenu();
@@ -31,6 +34,8 @@ namespace pryPeraltaGasparIE
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)
         {
+            
+
             if (usuarios.Contains(txtUsuario.Text))
             {
                 for (int i = 0; i < usuarios.Length; i++)
@@ -41,6 +46,17 @@ namespace pryPeraltaGasparIE
                     }
                 }
             }
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            string user = txtUsuario.Text;
+            string password = txtContraseña.Text;
         }
     }
 }
