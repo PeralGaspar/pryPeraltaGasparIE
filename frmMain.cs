@@ -18,20 +18,8 @@ namespace pryPeraltaGasparIE
         }
         int intentos = 0;
         clsControladorBD control = new clsControladorBD();
-        public string[] usuarios = {"Gaspar", "Profe"};
-        public string[] contraseña = { "Shedinja", "123"};
-        public Int32 cod = -1;
-        private void txtContraseña_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void txtUsuario_TextChanged(object sender, EventArgs e)
-        {
-        }
-
         private void frmMain_Load(object sender, EventArgs e)
         {
-
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
