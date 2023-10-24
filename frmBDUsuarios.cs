@@ -29,5 +29,14 @@ namespace pryPeraltaGasparIE
             Int32 ID = Int32.Parse(txtBuscar.Text);
             controlador.Buscar_Usuario(ID);
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            string nom = txtUsuario.Text;
+            string contra = txtContraseña.Text;
+            controlador.Agregar(nom, contra);
+            dgvUsuarios.Columns.Clear();
+            controlador.Traer_Datos(dgvUsuarios);
+        }
     }
 }

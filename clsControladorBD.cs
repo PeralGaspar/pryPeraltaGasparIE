@@ -84,6 +84,22 @@ namespace pryPeraltaGasparIE
                     lector.Close();
                 }
             }
+        public void Agregar(string Usuario, string Contraseña)
+        {
+            string sqlAgregar = "INSERT INTO Usuarios (Nombre, Contraseña) " +
+                "VALUES ("+Usuario+","+Contraseña+")";
+            OleDbCommand Command = new OleDbCommand(sqlAgregar, Conector);
+            Command.Connection = Conector;
+            Command.CommandType = CommandType.Text;
+
+            Command.Parameters.Add(
+                "Nombre", OleDbType.Char, 10, "Nombre");
+            Command.Parameters.Add(
+                "Contraseña", OleDbType.Char, 30, "Contraseña");
+            OleDbDataAdapter adapt = new OleDbDataAdapter();
+            adapt.InsertCommand = Command;
+            MessageBox.Show("Se agrego el usuario correctamente.");
+        }
         public Int32 Buscar_ID(string ID)
         {
             OleDbDataReader lector;
