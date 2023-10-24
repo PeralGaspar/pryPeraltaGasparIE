@@ -84,30 +84,47 @@ namespace pryPeraltaGasparIE
                     lector.Close();
                 }
             }
-        public void Buscar_ID(string ID)
+        public Int32 Buscar_ID(string ID)
         {
             OleDbDataReader lector;
+            Int32 pos = -1;
             lector = Comandos.ExecuteReader();
             if (lector.HasRows)
             {
-                int existe = -1;
                 while (lector.Read())
                 {
                     if (lector[1].ToString() == ID)
                     {
-                        
-                        break;
+                        pos = lector.GetInt32(0);
+                        lector.Close();
+                        return pos;
                     }
                 }
-                if (existe == false)
-                {
-                    MessageBox.Show("Cliente No Existe",
-                            "Consulta",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
-                }
-                lector.Close();
             }
+            lector.Close();
+            return pos;
+        }
+        public Boolean Buscar_Contraseña(string password, int ID)
+        {
+            OleDbDataReader lector;
+            Boolean coincide = false;
+            lector = Comandos.ExecuteReader();
+            int index = 0;
+            if (lector.HasRows)
+            {
+                while (lector.Read())
+                {
+                    index += 1;
+                    if (lector[2].ToString() == password && index == ID)
+                    {
+                        coincide = true;
+                        lector.Close();
+                        return coincide;
+                    }
+                }
+            }
+            lector.Close();
+            return coincide;
         }
     }
 }

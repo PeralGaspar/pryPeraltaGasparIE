@@ -16,36 +16,17 @@ namespace pryPeraltaGasparIE
         {
             InitializeComponent();
         }
+        int intentos = 0;
         clsControladorBD control = new clsControladorBD();
         public string[] usuarios = {"Gaspar", "Profe"};
         public string[] contraseña = { "Shedinja", "123"};
         public Int32 cod = -1;
         private void txtContraseña_TextChanged(object sender, EventArgs e)
         {
-            
-
-            if (txtContraseña.Text == contraseña[cod])
-            {
-                Form menu = new frmMenu();
-                menu.Show();
-                this.Hide();
-            }
         }
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)
         {
-            
-
-            if (usuarios.Contains(txtUsuario.Text))
-            {
-                for (int i = 0; i < usuarios.Length; i++)
-                {
-                    if (usuarios[i] == txtUsuario.Text)
-                    {
-                        cod = i;
-                    }
-                }
-            }
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -57,6 +38,23 @@ namespace pryPeraltaGasparIE
         {
             string user = txtUsuario.Text;
             string password = txtContraseña.Text;
+            Int32 ID = control.Buscar_ID(user);
+            if (control.Buscar_Contraseña(password, ID) == true)
+            {
+                Form menu = new frmMenu();
+                menu.Show();
+                this.Hide();
+            }
+            intentos += 1;
+            if (intentos == 3)
+            {
+                txtContraseña.Enabled = false;
+                txtUsuario.Enabled = false;
+                MessageBox.Show("Demasiados Intentos Fallidos.",
+                                "Bloqueo Automatico",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
         }
     }
 }
