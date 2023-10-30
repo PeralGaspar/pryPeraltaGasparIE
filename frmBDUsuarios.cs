@@ -35,8 +35,6 @@ namespace pryPeraltaGasparIE
             string nom = txtUsuario.Text;
             string contra = txtContraseña.Text;
             controlador.Agregar(nom, contra);
-            dgvUsuarios.Columns.Clear();
-            controlador.Traer_Datos(dgvUsuarios);
         }
     }
 }

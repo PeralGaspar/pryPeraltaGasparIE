@@ -52,7 +52,7 @@ namespace pryPeraltaGasparIE
                 Comandos = new OleDbCommand();
 
                 Comandos.Connection = Conector;
-                Comandos.CommandType = System.Data.CommandType.TableDirect;
+                Comandos.CommandType = CommandType.TableDirect;
                 Comandos.CommandText = "Logs";
 
                 adaptador = new OleDbDataAdapter(Comandos);
@@ -66,7 +66,7 @@ namespace pryPeraltaGasparIE
                 nuevoRegistro["FechaHora"] = DateTime.Now;
                 if (exito == true)
                 {
-                    nuevoRegistro["Descripcion"] = "Inicio exitoso";
+                    nuevoRegistro["Descripcion"] = "Inicio Exitoso";
                 }
                 if (exito == false)
                 {

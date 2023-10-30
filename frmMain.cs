@@ -34,7 +34,12 @@ namespace pryPeraltaGasparIE
                 menu.Show();
                 this.Hide();
             }
-            intentos += 1;
+            else
+            {
+                intentos += 1;
+                MessageBox.Show("Contraseña o Usuario incorrectos: Intentos restantes: " +
+                    Convert.ToString(3 - intentos));
+            }
             if (intentos == 3)
             {
                 logs.RegistroLogInicioSesion(false);
@@ -44,6 +49,7 @@ namespace pryPeraltaGasparIE
                                 "Bloqueo Automatico",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
+                btnConfirmar.Enabled = false;
             }
         }
     }

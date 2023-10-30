@@ -22,6 +22,9 @@ namespace pryPeraltaGasparIE
         OleDbConnection Conector;
         OleDbCommand Comandos;
 
+        OleDbDataAdapter adaptador;
+        DataSet objDataSet;
+
         public clsControladorBD()
         {
             ruta = info.FullName.ToString();
@@ -39,6 +42,7 @@ namespace pryPeraltaGasparIE
             //Aignamos Comandos
             Comandos.Connection = Conector;
             Comandos.CommandType = CommandType.Text;
+            objDataSet = new DataSet();
         }
 
         public void Traer_Datos(DataGridView grilla)
@@ -86,25 +90,36 @@ namespace pryPeraltaGasparIE
             }
         public void Agregar(string Usuario, string Contraseña)
         {
-            string sqlAgregar = "INSERT INTO Usuarios (Nombre, Contraseña) " +
-                "VALUES ("+Usuario+","+Contraseña+")";
-            OleDbCommand Command = new OleDbCommand(sql, Conector);
-            Command.Connection = Conector;
-            Command.CommandType = CommandType.Text;
+            try
+            {
+                Comandos = new OleDbCommand();
 
-            Command.Parameters.Add(
-                "Nombre", OleDbType.Char, 10, "Nombre");
-            Command.Parameters.Add(
-                "Contraseña", OleDbType.Char, 30, "Contraseña");
-            OleDbDataAdapter adapt = new OleDbDataAdapter();
-            adapt.SelectCommand = Command;
-            Command = new OleDbCommand(sqlAgregar, Conector);
-            Command.Parameters.Add(
-                "Nombre", OleDbType.Char, 10, "Nombre");
-            Command.Parameters.Add(
-                "Contraseña", OleDbType.Char, 30, "Contraseña");
-            adapt.InsertCommand = Command;
-            MessageBox.Show("Se agrego el usuario correctamente.");
+                Comandos.Connection = Conector;
+                Comandos.CommandType = CommandType.TableDirect;
+                Comandos.CommandText = "Usuarios";
+
+                adaptador = new OleDbDataAdapter(Comandos);
+
+                adaptador.Fill(objDataSet, "Usuarios");
+
+                DataTable objTabla = objDataSet.Tables["Usuarios"];
+                DataRow nuevoRegistro = objTabla.NewRow();
+
+                nuevoRegistro["Nombre"] = Usuario;
+                nuevoRegistro["Contraseña"] = Contraseña;
+
+
+                objTabla.Rows.Add(nuevoRegistro);
+
+                OleDbCommandBuilder constructor = new OleDbCommandBuilder(adaptador);
+                adaptador.Update(objDataSet, "Usuarios");
+                MessageBox.Show("Se agrego el usuario correctamente.");
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Ocurrio un error.");
+            }
         }
         public Boolean Buscar_Contraseña(string Usuario, string Password)
         {
