@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsControladorBD.cs" />
+    <Compile Include="clsLogs.cs" />
     <Compile Include="frmBDUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>

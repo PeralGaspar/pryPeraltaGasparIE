@@ -18,6 +18,7 @@ namespace pryPeraltaGasparIE
         }
         int intentos = 0;
         clsControladorBD control = new clsControladorBD();
+        clsLogs logs = new clsLogs();
         private void frmMain_Load(object sender, EventArgs e)
         {
         }
@@ -26,9 +27,9 @@ namespace pryPeraltaGasparIE
         {
             string user = txtUsuario.Text;
             string password = txtContraseña.Text;
-            Int32 ID = control.Buscar_ID(user);
-            if (control.Buscar_Contraseña(password, ID) == true)
+            if (control.Buscar_Contraseña(user, password) == true)
             {
+                logs.RegistroLogInicioSesion(true);
                 Form menu = new frmMenu();
                 menu.Show();
                 this.Hide();
@@ -36,6 +37,7 @@ namespace pryPeraltaGasparIE
             intentos += 1;
             if (intentos == 3)
             {
+                logs.RegistroLogInicioSesion(false);
                 txtContraseña.Enabled = false;
                 txtUsuario.Enabled = false;
                 MessageBox.Show("Demasiados Intentos Fallidos.",

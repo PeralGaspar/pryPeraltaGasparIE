@@ -88,7 +88,7 @@ namespace pryPeraltaGasparIE
         {
             string sqlAgregar = "INSERT INTO Usuarios (Nombre, Contraseña) " +
                 "VALUES ("+Usuario+","+Contraseña+")";
-            OleDbCommand Command = new OleDbCommand(sqlAgregar, Conector);
+            OleDbCommand Command = new OleDbCommand(sql, Conector);
             Command.Connection = Conector;
             Command.CommandType = CommandType.Text;
 
@@ -97,50 +97,41 @@ namespace pryPeraltaGasparIE
             Command.Parameters.Add(
                 "Contraseña", OleDbType.Char, 30, "Contraseña");
             OleDbDataAdapter adapt = new OleDbDataAdapter();
+            adapt.SelectCommand = Command;
+            Command = new OleDbCommand(sqlAgregar, Conector);
+            Command.Parameters.Add(
+                "Nombre", OleDbType.Char, 10, "Nombre");
+            Command.Parameters.Add(
+                "Contraseña", OleDbType.Char, 30, "Contraseña");
             adapt.InsertCommand = Command;
             MessageBox.Show("Se agrego el usuario correctamente.");
         }
-        public Int32 Buscar_ID(string ID)
+        public Boolean Buscar_Contraseña(string Usuario, string Password)
         {
-            OleDbDataReader lector;
-            Int32 pos = -1;
-            lector = Comandos.ExecuteReader();
-            if (lector.HasRows)
-            {
-                while (lector.Read())
-                {
-                    if (lector[1].ToString() == ID)
-                    {
-                        pos = lector.GetInt32(0);
-                        lector.Close();
-                        return pos;
-                    }
-                }
-            }
-            lector.Close();
-            return pos;
-        }
-        public Boolean Buscar_Contraseña(string password, int ID)
-        {
-            OleDbDataReader lector;
             Boolean coincide = false;
-            lector = Comandos.ExecuteReader();
-            int index = 0;
-            if (lector.HasRows)
+            try
             {
-                while (lector.Read())
+                OleDbDataReader lector;
+                lector = Comandos.ExecuteReader();
+                if (lector.HasRows)
                 {
-                    index += 1;
-                    if (lector[2].ToString() == password && index == ID)
+                    while (lector.Read())
                     {
-                        coincide = true;
-                        lector.Close();
-                        return coincide;
+                        if (lector[1].ToString() == Usuario && lector[2].ToString() == Password)
+                        {
+                            coincide = true;
+                            lector.Close();
+                            return coincide;
+                        }
                     }
                 }
+                lector.Close();
+                return coincide;
             }
-            lector.Close();
-            return coincide;
+            catch (Exception)
+            {
+                return coincide;
+            }
         }
     }
 }
