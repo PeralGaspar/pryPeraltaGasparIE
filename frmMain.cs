@@ -21,6 +21,7 @@ namespace pryPeraltaGasparIE
         clsLogs logs = new clsLogs();
         private void frmMain_Load(object sender, EventArgs e)
         {
+            logs.RegistroLogInicioSesion(true, "Inicio de Aplicacion.");
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
@@ -29,7 +30,7 @@ namespace pryPeraltaGasparIE
             string password = txtContraseña.Text;
             if (control.Buscar_Contraseña(user, password) == true)
             {
-                logs.RegistroLogInicioSesion(true);
+                logs.RegistroLogInicioSesion(true, "Inicio de Sesion");
                 Form menu = new frmMenu();
                 menu.Show();
                 this.Hide();
@@ -37,12 +38,13 @@ namespace pryPeraltaGasparIE
             else
             {
                 intentos += 1;
+
+                logs.RegistroLogInicioSesion(false, "Inicio de Sesion");
                 MessageBox.Show("Contraseña o Usuario incorrectos: Intentos restantes: " +
                     Convert.ToString(3 - intentos));
             }
             if (intentos == 3)
             {
-                logs.RegistroLogInicioSesion(false);
                 txtContraseña.Enabled = false;
                 txtUsuario.Enabled = false;
                 MessageBox.Show("Demasiados Intentos Fallidos.",
@@ -51,6 +53,11 @@ namespace pryPeraltaGasparIE
                                 MessageBoxIcon.Error);
                 btnConfirmar.Enabled = false;
             }
+        }
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            logs.RegistroLogInicioSesion(true, "Cierre de Aplicacion");
+            this.Close();
         }
     }
 }

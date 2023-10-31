@@ -17,6 +17,7 @@ namespace pryPeraltaGasparIE
             InitializeComponent();
         }
 
+        clsLogs logs = new clsLogs();
         private void frmMenu_Load(object sender, EventArgs e)
         {
 
@@ -24,6 +25,7 @@ namespace pryPeraltaGasparIE
 
         private void btnAseguradores_Click(object sender, EventArgs e)
         {
+            logs.RegistroLogInicioSesion(true, "Ingreso a Aseguradores");
             this.Hide();
             Form aseguradores = new frmCargar();
             aseguradores.Show();
@@ -31,6 +33,8 @@ namespace pryPeraltaGasparIE
 
         private void btnCarpetas_Click(object sender, EventArgs e)
         {
+
+            logs.RegistroLogInicioSesion(true, "Ingreso a Carpetas");
             this.Hide();
             Form carpetas = new frmCarpetas();
             carpetas.Show();
@@ -38,6 +42,8 @@ namespace pryPeraltaGasparIE
 
         private void btnProveedores_Click(object sender, EventArgs e)
         {
+
+            logs.RegistroLogInicioSesion(true, "Ingreso a Proveedores");
             this.Hide();
             Form proveedores = new frmProvedores();
             proveedores.Show();
@@ -45,9 +51,18 @@ namespace pryPeraltaGasparIE
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
+
+            logs.RegistroLogInicioSesion(true, "Ingreso a Usuarios");
             this.Hide();
             Form usuarios = new frmBDUsuarios();
             usuarios.Show();
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+
+            logs.RegistroLogInicioSesion(true, "Cierre de Aplicacion");
+            this.Close();
         }
     }
 }

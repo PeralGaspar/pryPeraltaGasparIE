@@ -45,7 +45,7 @@ namespace pryPeraltaGasparIE
                 EstadoConexion = error.Message;
             }
         }
-        public void RegistroLogInicioSesion(bool exito)
+        public void RegistroLogInicioSesion(bool exito, string Categoria)
         {
             try
             {
@@ -62,15 +62,15 @@ namespace pryPeraltaGasparIE
                 DataTable objTabla = objDataSet.Tables["Logs"];
                 DataRow nuevoRegistro = objTabla.NewRow();
 
-                nuevoRegistro["Categoria"] = "Inicio Sesión";
+                nuevoRegistro["Categoria"] = Categoria;
                 nuevoRegistro["FechaHora"] = DateTime.Now;
                 if (exito == true)
                 {
-                    nuevoRegistro["Descripcion"] = "Inicio Exitoso";
+                    nuevoRegistro["Descripcion"] = "Procedimiento Exitoso";
                 }
                 if (exito == false)
                 {
-                    nuevoRegistro["Descripcion"] = "Inicio Fallido";
+                    nuevoRegistro["Descripcion"] = "Procedimiento Fallido";
                 }
 
 

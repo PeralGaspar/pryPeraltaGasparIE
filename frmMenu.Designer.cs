@@ -33,6 +33,7 @@
             this.btnCarpetas = new System.Windows.Forms.Button();
             this.btnProveedores = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAseguradores
@@ -75,11 +76,24 @@
             this.btnUsuarios.UseVisualStyleBackColor = true;
             this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
+            // btnCerrar
+            // 
+            this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCerrar.Location = new System.Drawing.Point(326, 365);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(158, 53);
+            this.btnCerrar.TabIndex = 5;
+            this.btnCerrar.Text = "CERRAR";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(323, 430);
+            this.CancelButton = this.btnCerrar;
+            this.ClientSize = new System.Drawing.Size(296, 430);
+            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnUsuarios);
             this.Controls.Add(this.btnProveedores);
             this.Controls.Add(this.btnCarpetas);
@@ -100,5 +114,6 @@
         private System.Windows.Forms.Button btnCarpetas;
         private System.Windows.Forms.Button btnProveedores;
         private System.Windows.Forms.Button btnUsuarios;
+        private System.Windows.Forms.Button btnCerrar;
     }
 }

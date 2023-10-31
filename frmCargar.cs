@@ -131,15 +131,51 @@ namespace pryPeraltaGasparIE
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            String nuevo = "";
-            StreamWriter objSw = new StreamWriter(@"../../" + "Resources/Backup Aseguradores.csv", true);
-            for (Int32 i = 0; i < dataGridView1.Rows.Count; i++)
+            if (dataGridView1.RowCount > 0)
             {
-                nuevo = dataGridView1.Rows[i].ToString();
-                objSw.WriteLine(nuevo);
+                string value = "";
+                DataGridViewRow dr = new DataGridViewRow();
+                StreamWriter sWriter = new StreamWriter
+                    (@"../../" + "Resources/Lista Aseguradores.csv", true);
+
+                //Escribimos los titulos al archivo
+                for (int i = 0; i <= dataGridView1.Columns.Count - 1; i++)
+                {
+                    if (i > 0)
+                    {
+                        sWriter.Write(";");
+                    }
+                    sWriter.Write(dataGridView1.Columns[i].HeaderText);
+                }
+                sWriter.WriteLine();
+
+                //Escribimos filas del gridview al archivo
+                for (int j = 0; j <= dataGridView1.Rows.Count - 1; j++)
+                {
+                    if (j > 0)
+                    {
+                        sWriter.WriteLine();
+                    }
+
+                    dr = dataGridView1.Rows[j];
+
+                    for (int i = 0; i <= dataGridView1.Columns.Count - 1; i++)
+                    {
+                        if (i > 0)
+                        {
+                            sWriter.Write(";");
+                        }
+
+                        value = dr.Cells[i].Value.ToString();
+                        //Reemplazamos nuevas lineas con espacios
+                        value = value.Replace(Environment.NewLine, " ");
+
+                        sWriter.Write(value);
+                    }
+                }
+                sWriter.Close();
+                MessageBox.Show("Exported succesfully.");
             }
-            MessageBox.Show("Datos Guardados a Backup Aseguradores.csv");
-            objSw.Close();
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
