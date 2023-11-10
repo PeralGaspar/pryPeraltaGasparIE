@@ -19,6 +19,7 @@ namespace pryPeraltaGasparIE
             InitializeComponent();
         }
         clsControladorBD controlador = new clsControladorBD();
+        clsLogs logs = new clsLogs();
         private void frmBDUsuarios_Load(object sender, EventArgs e)
         {
             controlador.Traer_Datos(dgvUsuarios);
@@ -35,6 +36,15 @@ namespace pryPeraltaGasparIE
             string nom = txtUsuario.Text;
             string contra = txtContraseña.Text;
             controlador.Agregar(nom, contra);
+            logs.RegistroLogInicioSesion(true, "Usuario Y Contraseña Agregados");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            logs.RegistroLogInicioSesion(true, "Retorno a Menu");
+            frmMenu VolverMenu = new frmMenu();
+            VolverMenu.Show();
+            this.Close();
         }
     }
 }

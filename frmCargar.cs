@@ -35,6 +35,7 @@ namespace pryPeraltaGasparIE
             }
             grilla.Close();
         }
+        clsLogs logs = new clsLogs();
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -175,6 +176,7 @@ namespace pryPeraltaGasparIE
                 }
                 sWriter.Close();
                 MessageBox.Show("Exported succesfully.");
+                logs.RegistroLogInicioSesion(true, "Cambios a Aseguradores");
             }
         }
 
@@ -195,6 +197,7 @@ namespace pryPeraltaGasparIE
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
+            logs.RegistroLogInicioSesion(true, "Retorno a Menu");
             frmMenu VolverMenu = new frmMenu();
             VolverMenu.Show();
             this.Close();

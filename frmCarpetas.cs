@@ -18,6 +18,7 @@ namespace pryPeraltaGasparIE
             InitializeComponent();
         }
         public string ruta = "";
+        clsLogs logs = new clsLogs();
 
         private void PopulateTreeView()
         {
@@ -93,6 +94,7 @@ namespace pryPeraltaGasparIE
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
+            logs.RegistroLogInicioSesion(true, "Retorno a Menu");
             frmMenu VolverMenu = new frmMenu();
             VolverMenu.Show();
             this.Close();
